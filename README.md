@@ -2,6 +2,8 @@
 
 Hands-free Android app: eyes move an on-screen cursor and facial expressions trigger taps, scrolls and other actions in any app. **Everything runs on-device with no network.**
 
+**Download the demo APK:** [GazeTap-v0.29.9.apk](https://github.com/mohit53454/Gazetap/releases/download/v0.29.9/GazeTap-v0.29.9.apk) (24 MB)
+
 ## Repository structure
 
 ```
