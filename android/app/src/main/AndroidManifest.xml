@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-feature
+        android:name="android.hardware.camera.front"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- Keeps the camera (and with it gaze tracking) alive while another app is in front. -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CAMERA" />
+    <!-- Keeps the :gestures process (accessibility service) out of the low-memory kill list. -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <!-- HyperOS suspends the camera of non-exempt apps: without this the cursor freezes when GazeTap
+         leaves the screen, which is the "works in the app, does nothing outside it" report. -->
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+    <!-- Only Android 8-9 need this to write CSV files into the public Download/GazeTap folder.
+         Android 10+ uses MediaStore, which requires no storage permission at all. -->
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+
+    <application
+        android:name=".GazeTapApp"
+        android:allowBackup="false"
+        android:icon="@drawable/ic_gazetap_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ic_gazetap_logo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.GazeTap">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- In its own process on purpose: gesture injection must survive the camera process being
+             reclaimed or crashing. Sharing a process is what made HyperOS report this service as
+             "Not working" every time the app died. -->
+        <service
+            android:name=".GazeAccessibilityService"
+            android:exported="true"
+            android:isAccessibilityTool="true"
+            android:label="@string/accessibility_label"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
+            android:process=":gestures">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessibility_service_config" />
+        </service>
+
+        <!-- The app process talks to the accessibility service through this bound service only.
+             Statics do not cross processes, so every command is a real binder message now. -->
+        <service
+            android:name=".GazeBridgeService"
+            android:exported="false"
+            android:foregroundServiceType="specialUse"
+            android:process=":gestures">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="Holds the accessibility gesture engine in memory so eye flicks keep working in other apps" />
+        </service>
+
+        <!-- Camera access dies with the activity otherwise, so the cursor freezes as soon as
+             another app is opened - which is the only situation GazeTap exists for. -->
+        <service
+            android:name=".GazeSessionService"
+            android:exported="false"
+            android:foregroundServiceType="camera" />
+
+    </application>
+
+</manifest>

@@ -1,0 +1,64 @@
+<resources>
+    <string name="app_name">GazeTap</string>
+    <string name="record_session">Record</string>
+    <string name="stop_recording">Stop</string>
+    <string name="camera_permission_required">Camera permission is needed so GazeTap can see your face movements.</string>
+    <string name="storage_permission_required">Storage permission is needed to save a recording on this Android version.</string>
+    <string name="model_missing">A required face file is missing. Please reinstall the app.</string>
+    <string name="recording_to">Recording… saving to %1$s</string>
+    <string name="recording_saved">Saved recording: %1$s</string>
+    <string name="recording_failed">Could not save recording: %1$s</string>
+    <string name="recording_stopped">Recording stopped</string>
+
+    <string name="calibrate">Set up cursor</string>
+    <string name="recalibrate">Set up cursor again</string>
+    <string name="gaze_on">Cursor: On</string>
+    <string name="gaze_off">Cursor: Off</string>
+    <string name="gaze_needs_calibration">Set up cursor first</string>
+    <string name="gaze_enabled">Cursor is on. Look around to move it and hold still to tap.</string>
+    <string name="gaze_disabled">Cursor is off</string>
+    <string name="calibration_needs_camera">Please allow the camera and try again.</string>
+    <string name="calibration_started">Look at the dot (%1$d of %2$d)</string>
+    <string name="calibration_saved">Cursor setup complete</string>
+    <string name="calibration_failed">Setup could not finish: %1$s</string>
+    <string name="dwell_click">Tap done</string>
+
+    <string name="flicks_off">Turn swipes ON</string>
+    <string name="flicks_on">Swipes ON (tap to turn off)</string>
+    <string name="flick_needs_calibration">Set up the cursor first if you want eye control. Face swipes can still work.</string>
+    <string name="flick_needs_accessibility">To control other apps, turn on “GazeTap gestures” in Accessibility settings.</string>
+    <string name="flick_sent">Swipe %1$s sent</string>
+    <string name="flicks_enabled">Swipes are on. Move your face from center, then return to center.</string>
+    <string name="flicks_disabled">Swipes are off</string>
+
+    <string name="low_res_off">Low quality: off</string>
+    <string name="low_res_on">Low quality: on</string>
+    <string name="low_res_enabled">Low quality mode on. Set up cursor again if needed.</string>
+    <string name="low_res_disabled">Normal quality mode on. Set up cursor again if needed.</string>
+    <string name="recalibrate_for_mode">Please set up the cursor again for this mode.</string>
+    <string name="mode_stats_placeholder"></string>
+    <string name="mode_stats"></string>
+    <string name="eye_debug_none"></string>
+    <string name="look_debug_none"></string>
+
+    <string name="calibration_no_movement">Try moving only your eyes to the dot (keep your head still), or try again.</string>
+    <string name="calibration_aborted">Setup stopped because eye movement was not detected. Please try again in good light.</string>
+    <string name="calibration_rejected">Setup didn’t work well. Please try again: look at each dot with your eyes and keep your head still.</string>
+    <string name="accessibility_enabled_not_connected">Accessibility is turned on but not connected yet. Try turning “GazeTap gestures” off and on.</string>
+    <string name="help_line">Move your face from center to swipe. Return to center to do it again.</string>
+    <string name="previous_crash">Something went wrong last time. If it happens again, please reopen the app.</string>
+    <string name="accessibility_label">GazeTap gestures</string>
+    <string name="test_accessibility">Test</string>
+    <string name="svc_not_connected">Permission to control other apps: not connected</string>
+    <string name="accessibility_description">Lets GazeTap send swipes and taps to the app in front. No screen content is read.</string>
+
+    <!-- Simple UI -->
+    <string name="tagline">Control your phone with face movements</string>
+    <string name="status_ready">Ready</string>
+    <string name="how_it_works_title">How to use</string>
+    <string name="step1">1. Allow camera access</string>
+    <string name="step2">2. Turn on “GazeTap gestures” in Accessibility (to control other apps)</string>
+    <string name="step3">3. Tap “Turn swipes ON”, rest your face at center, then move up/down/left/right and return to center</string>
+    <string name="advanced_details">Details</string>
+    <string name="swipe_hint">Tip: Keep your face in view. Small moves from center work best.</string>
+</resources>

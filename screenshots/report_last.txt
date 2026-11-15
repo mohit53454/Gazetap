@@ -1,0 +1,25 @@
+GazeTap fault report
+generated: Sat Nov 14 14:05:05 GMT+05:30 2026
+app: v0.15.0-gestures (17)
+device: Xiaomi 2412DPC0AI
+android: 16 (sdk 36)
+debuggable build: false
+
+--- accessibility service (:gestures) ---
+bound: false
+overlay: false
+status: not bound
+last result: -
+last error: -
+accepted/refused: 0 / 0
+completed/cancelled: 0 / 0
+history: not created since install - turn the toggle OFF, leave Settings, swipe GazeTap away, then turn it ON again
+
+
+--- event log ---
+2026-11-14 14:03:48.581  APP-0  started v0.15.0-gestures (17) on Xiaomi 2412DPC0AI, android 16 (sdk 36), abi arm64-v8a
+2026-11-14 14:03:48.754  A11Y-10  connected to the :gestures process
+2026-11-14 14:03:48.765  A11Y-00  accessibility is off in settings
+2026-11-14 14:04:50.938  E-CAL-2  calibration aborted after 3 non-moving points (iris spread 0.23059952131006867, look spread 0.0)
+2026-11-14 14:05:04.263  A11Y-T  self test: the accessibility service is not bound in :gestures - not created since install - turn the toggle OFF, leave Settings, swipe GazeTap away, then turn it ON again
+2026-11-14 14:05:05.309  A11Y-T  self test: the accessibility service is not bound in :gestures - not created since install - turn the toggle OFF, leave Settings, swipe GazeTap away, then turn it ON again

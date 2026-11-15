@@ -1,0 +1,31 @@
+# Gradle / Android
+*.iml
+.gradle/
+**/build/
+captures/
+.externalNativeBuild/
+.cxx/
+local.properties
+**/local.properties
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Build outputs
+*.apk
+*.aab
+
+# Signing / secrets (do not commit)
+android/keystore/
+**/*.jks
+**/*.keystore
+*.pepk
+*.pem
+**/google-services.json
+**/secrets*.properties
+
+# Large/model assets (download separately if needed)
+android/app/src/main/assets/face_landmarker.task

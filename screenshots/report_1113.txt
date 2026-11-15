@@ -1,0 +1,22 @@
+GazeTap fault report
+generated: Fri Nov 13 20:41:49 GMT+05:30 2026
+app: v0.12.1-swipecheck (14)
+device: Xiaomi 2412DPC0AI
+android: 16 (sdk 36)
+debuggable build: false
+accessibility bound: false, overlay: false
+accessibility status: not bound
+
+--- event log ---
+2026-11-13 20:38:50.405  APP-0  started v0.12.1-swipecheck (14) on Xiaomi 2412DPC0AI, android 16 (sdk 36), abi arm64-v8a
+2026-11-13 20:38:53.770  A11Y-00  accessibility service is off in settings
+2026-11-13 20:40:27.979  A11Y-02  accessibility service bound and usable
+2026-11-13 20:40:29.414  A11Y-07  flick UP speed=21303px/s d=(174,-1417) outcome=true
+2026-11-13 20:40:32.252  APP-0  started v0.12.1-swipecheck (14) on Xiaomi 2412DPC0AI, android 16 (sdk 36), abi arm64-v8a
+2026-11-13 20:40:32.271  A11Y-01  settings say enabled but the system never bound it: created 20:40:25, bound 20:40:25 (x1) - toggle it OFF then ON to rebind
+2026-11-13 20:41:01.367  A11Y-02  accessibility service bound and usable
+2026-11-13 20:41:02.728  A11Y-07  flick UP speed=7276px/s d=(-274,-821) outcome=true
+2026-11-13 20:41:08.737  APP-0  started v0.12.1-swipecheck (14) on Xiaomi 2412DPC0AI, android 16 (sdk 36), abi arm64-v8a
+2026-11-13 20:41:08.757  A11Y-01  settings say enabled but the system never bound it: created 20:40:57, bound 20:40:57 (x2) - toggle it OFF then ON to rebind
+2026-11-13 20:41:48.432  A11Y-01  report requested with no bound service: listed=true, created 20:40:57, bound 20:40:57 (x2) - toggle it OFF then ON to rebind
+2026-11-13 20:41:49.275  A11Y-01  report requested with no bound service: listed=true, created 20:40:57, bound 20:40:57 (x2) - toggle it OFF then ON to rebind
